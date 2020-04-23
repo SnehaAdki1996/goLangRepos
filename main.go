@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+import "github.com:SnehaAdki1996/goLangRepos.git/models"
+
 func main() {
 
 	//Declare and Asssign
@@ -49,6 +51,13 @@ func main() {
 	fmt.Println(c3 + 4)
 	fmt.Println(float32(c3) + 1.4)
 
+	userDemo:=models.User{
+		userId :4,
+		f_name :"Sneha",
+		l_name :"Vijay",
+	}
+
+	fmt.Println(userDemo)
 }
 
 // C:\Go_Code>go run main.go
