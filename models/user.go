@@ -8,5 +8,16 @@ type User struct {
 
 var (
 	users  []*User //Slice of pointer
-	nextID int32   = 1
+	nextID = 1
 )
+
+func GetUsers() []*User {
+	return users
+}
+
+func AddUSer(u User) (User, error) {
+	u.userId = nextID
+	nextID++
+	users = append(users, &u)
+	return u, nil
+}

@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
-
-import "github.com:SnehaAdki1996/goLangRepos.git/models"
+import (
+	"github.com:SnehaAdki1996/goLangRepos/models"
+	
+	//"github.com:SnehaAdki1996/goLangRepo/models"
+	"fmt"
+)
 
 func main() {
 
@@ -51,13 +54,13 @@ func main() {
 	fmt.Println(c3 + 4)
 	fmt.Println(float32(c3) + 1.4)
 
-	userDemo:=models.User{
+	
+	uDemo:=models.User{
 		userId :4,
 		f_name :"Sneha",
 		l_name :"Vijay",
 	}
-
-	fmt.Println(userDemo)
+	fmt.Println(uDemo)
 }
 
 // C:\Go_Code>go run main.go
