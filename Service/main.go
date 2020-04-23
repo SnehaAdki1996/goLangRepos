@@ -1,8 +1,11 @@
 package main
 
 import (
-	"github.com:SnehaAdki1996/goLangRepos/models"
+	"https://github.com/SnehaAdki1996/goLangRepos.git/controller"
 	
+	
+	"net/http"
+
 	//"github.com:SnehaAdki1996/goLangRepo/models"
 	"fmt"
 )
@@ -54,13 +57,8 @@ func main() {
 	fmt.Println(c3 + 4)
 	fmt.Println(float32(c3) + 1.4)
 
-	
-	uDemo:=models.User{
-		userId :4,
-		f_name :"Sneha",
-		l_name :"Vijay",
-	}
-	fmt.Println(uDemo)
+	controller.RegisterController(*uc)
+	http.ListenAndServe(":3000", nil)
 }
 
 // C:\Go_Code>go run main.go
