@@ -6,7 +6,8 @@ import (
 	"regexp"
 	"strconv"
 
-	"github.com/SnehaAdki1996/goLangRepos/models"
+	"main.go/models"
+	//"github.com/SnehaAdki1996/goLangRepos/models"
 )
 
 type userController struct {
@@ -28,6 +29,7 @@ func (uc userController) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		if len(matches) == 0 {
 			w.WriteHeader(http.StatusNotFound)
 		}
+		var id int
 		id, err := strconv.Atoi(matches[1])
 		if err != nil {
 			w.WriteHeader(http.StatusNotFound)
@@ -97,7 +99,7 @@ func (uc *userController) put(id int, w http.ResponseWriter, r *http.Request) {
 }
 
 func (uc *userController) delete(id int, w http.ResponseWriter) {
-	err := models.removeUserId(id)
+	err := models.RemoveUserById(id)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte(err.Error()))

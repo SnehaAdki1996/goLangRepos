@@ -6,7 +6,8 @@ import (
 	//"github.com:SnehaAdki1996/goLangRepo/models"
 	"fmt"
 
-	"github.com/SnehaAdki1996/goLangRepos/controller"
+	"main.go/controller"
+	//"github.com/SnehaAdki1996/goLangRepos/controller"
 )
 
 func main() {

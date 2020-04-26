@@ -39,6 +39,16 @@ func GetUserByID(id int) (User, error) {
 	return User{}, fmt.Errorf("Id not found", id)
 }
 
+func RemoveUserById(id int) error {
+	for i, u := range users {
+		if u.Id == id {
+			users = append(users[:i], users[i+1:]...)
+			return nil
+		}
+	}
+	return fmt.Errorf("USer with ID not available", id)
+}
+
 func UpdateUser(u User) (User, error) {
 	for i, cadidate := range users {
 		if cadidate.Id == u.Id {
@@ -47,14 +57,4 @@ func UpdateUser(u User) (User, error) {
 		}
 	}
 	return User{}, fmt.Errorf("User ID is not available ", u)
-}
-
-func removeUserId(id int) error {
-	for i, u := range users {
-		if u.Id == id {
-			users = append(users[:i], users[i+1:]...)
-			return nil
-		}
-	}
-	return fmt.Errorf("USer with ID %v not availidabel", id)
 }

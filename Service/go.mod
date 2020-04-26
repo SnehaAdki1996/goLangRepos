@@ -1,3 +1,3 @@
-module github.com/SnehaAdki1996/goLangRepos
+module main.go
 
 go 1.12
